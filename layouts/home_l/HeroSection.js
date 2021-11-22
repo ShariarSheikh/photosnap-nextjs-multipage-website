@@ -16,7 +16,7 @@ const HeroSection = () => {
         }
         paragraph={
           <p className="text-gray-600 mt-6">
-            Photonsnap is platform for photographersand visual <br />
+            Photosnap is platform for photographersand visual <br />
             storyteller. We make it easy to share photos,
             <br />
             stories storytellers. We make it easy to share photos,tell <br />
