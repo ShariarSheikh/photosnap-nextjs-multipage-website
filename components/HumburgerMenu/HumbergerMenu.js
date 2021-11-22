@@ -30,7 +30,7 @@ const HumburgerMenu = () => {
         </div>
         <div className="h-[30vh] bg-black flex justify-between items-center w-full">
           <div className="pl-3">
-            <h1 className="font-bold text-white uppercase">Photonsnap</h1>
+            <h1 className="font-bold text-white uppercase">Photosnnap</h1>
           </div>
           <div className="flex justify-center items-center space-x-3 pr-3">
             <AiFillFacebook className="text-gray-300" />

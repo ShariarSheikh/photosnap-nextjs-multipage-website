@@ -39,7 +39,7 @@ const Header = () => {
         <div className="flex justify-between items-center w-full h-full px-6">
           {/* logo div */}
           <div className="h-full flex items-center">
-            <h1 className="uppercase font-bold text-xl">Photonsnap</h1>
+            <h1 className="uppercase font-bold text-xl">Photosnnap</h1>
           </div>
 
           {/* link container */}
