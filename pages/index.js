@@ -1,7 +1,32 @@
 import Head from "next/head";
 import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
+import HeroSection from "../layouts/home_l/HeroSection";
+import Section2 from "../layouts/home_l/Section2";
+import Section3 from "../layouts/home_l/Section3";
+import Section4 from "../layouts/home_l/Section4";
+import Section5 from "../layouts/home_l/Section5";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+  const [windowSize, setWindowSize] = useState({
+    height: undefined,
+  });
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        height: window.scrollY,
+      });
+    }
+
+    window.addEventListener("scroll", handleResize);
+
+    handleResize();
+
+    return () => window.removeEventListener("scroll", handleResize);
+  }, []);
+
   return (
     <div>
       <Head>
@@ -12,9 +37,17 @@ const Home = () => {
 
       <Header />
 
-      <main>
-        <h1 className="text-blue-400">lasjjdfl</h1>
+      <main
+        className={`w-full ${windowSize.height >= 200 ? "mt-[70px]" : "mt-0"}`}
+      >
+        <HeroSection />
+        <Section2 />
+        <Section3 />
+        <Section4 />
+        <Section5 />
       </main>
+
+      <Footer />
     </div>
   );
 };

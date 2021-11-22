@@ -11,7 +11,7 @@ const HumburgerMenu = () => {
   return (
     <div className="bg-white w-full h-auto fixed block md:hidden z-30">
       <div className="w-full h-auto overflow-y-scroll relative">
-        <div className="flex flex-col justify-evenly items-center space-y-5 h-[70vh]">
+        <div className="flex flex-col justify-center items-center space-y-8 h-[70vh]">
           <Link href="/stories" passHref>
             <a className="text-gray-600 font-bold cursor-pointer uppercase text-3xl hover:text-text-4xl duration-200">
               Stories

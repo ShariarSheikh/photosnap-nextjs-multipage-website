@@ -1,13 +1,40 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MenuIcon from "../../utils/MenuIcon";
 import HumburgerMenu from "../HumburgerMenu/HumbergerMenu";
 
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [windowSize, setWindowSize] = useState({
+    height: undefined,
+  });
+
+  useEffect(() => {
+    if (openMenu) {
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.overflowY = "auto";
+    }
+
+    function handleResize() {
+      setWindowSize({
+        height: window.scrollY,
+      });
+    }
+
+    window.addEventListener("scroll", handleResize);
+
+    handleResize();
+
+    return () => window.removeEventListener("scroll", handleResize);
+  }, [openMenu]);
 
   return (
-    <header className="h-[70px] w-full bg-white fixed top-0 z-50">
+    <header
+      className={`h-[70px] w-full bg-white transition-all duration-200 ease-out ${
+        windowSize.height >= 200 ? "fixed top-0" : "relative"
+      }  z-50`}
+    >
       <div className="max-w-[1366px] m-auto relative h-full">
         <div className="flex justify-between items-center w-full h-full px-6">
           {/* logo div */}
@@ -17,7 +44,7 @@ const Header = () => {
 
           {/* link container */}
           <div className="hidden md:block">
-            <div className="h-full flex items-center space-x-4">
+            <div className="h-full flex items-center space-x-8">
               <Link href="/stories" passHref>
                 <a className="text-gray-600 font-medium cursor-pointer uppercase hover:text-lg duration-200">
                   Stories
@@ -41,7 +68,7 @@ const Header = () => {
             <div className="h-full flex items-center justify-center">
               <Link href="/get-invite" passHref>
                 <a className="h-10 w-32 flex justify-center items-center text-white rounded-lg hover:text-lg active:text-lg duration-150 uppercase bg-black">
-                  Get In Invite
+                  Get An Invite
                 </a>
               </Link>
             </div>
