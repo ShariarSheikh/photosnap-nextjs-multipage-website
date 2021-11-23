@@ -1,3 +1,4 @@
+import { useRouter } from "next/dist/client/router";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import MenuIcon from "../../utils/MenuIcon";
@@ -9,25 +10,27 @@ const Header = () => {
     height: undefined,
   });
 
+  const router = useRouter();
+
   useEffect(() => {
     if (openMenu) {
       document.body.style.overflowY = "hidden";
     } else {
       document.body.style.overflowY = "auto";
     }
-
     function handleResize() {
       setWindowSize({
         height: window.scrollY,
       });
     }
-
     window.addEventListener("scroll", handleResize);
-
     handleResize();
-
     return () => window.removeEventListener("scroll", handleResize);
   }, [openMenu]);
+
+  useEffect(() => {
+    setOpenMenu((pervState) => (pervState = false));
+  }, [router]);
 
   return (
     <header
@@ -39,24 +42,28 @@ const Header = () => {
         <div className="flex justify-between items-center w-full h-full px-6">
           {/* logo div */}
           <div className="h-full flex items-center">
-            <h1 className="uppercase font-bold text-xl">Photosnnap</h1>
+            <h1 className="uppercase font-bold text-xl cursor-pointer">
+              <Link href="/" passHref>
+                <a>Photosnnap</a>
+              </Link>
+            </h1>
           </div>
 
           {/* link container */}
           <div className="hidden md:block">
-            <div className="h-full flex items-center space-x-8">
+            <div className="h-full flex items-center space-x-3 lg:space-x-8">
               <Link href="/stories" passHref>
-                <a className="text-gray-600 font-medium cursor-pointer uppercase hover:text-lg duration-200">
+                <a className="text-gray-600 w-[100px] overflow-hidden font-medium cursor-pointer uppercase hover:text-lg duration-200">
                   Stories
                 </a>
               </Link>
               <Link href="/features" passHref>
-                <a className="text-gray-600 font-medium cursor-pointer uppercase hover:text-lg duration-200">
+                <a className="text-gray-600 w-[100px] overflow-hidden font-medium cursor-pointer uppercase hover:text-lg duration-200">
                   Features
                 </a>
               </Link>
               <Link href="/pricing" passHref>
-                <a className="text-gray-600 font-medium cursor-pointer uppercase hover:text-lg duration-200">
+                <a className="text-gray-600 w-[100px] overflow-hidden font-medium cursor-pointer uppercase hover:text-lg duration-200">
                   Pricing
                 </a>
               </Link>

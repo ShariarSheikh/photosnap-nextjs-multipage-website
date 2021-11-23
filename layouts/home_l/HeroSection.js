@@ -6,7 +6,7 @@ import ImageComponent from "../../utils/ImageComponent/ImageComponent";
 
 const HeroSection = () => {
   return (
-    <section className="w-full flex flex-col md:flex-row min-h-[94vh]">
+    <section className="w-full flex flex-col-reverse md:flex-row min-h-[94vh]">
       <TextComponent
         headerText={
           <h1 className="md:text-6xl text-4xl text-gray-300 tracking-wider uppercase font-medium">
@@ -34,11 +34,13 @@ const HeroSection = () => {
             </Link>
           </button>
         }
+        width={"40%"}
       />
       <ImageComponent
         img={
           "https://images.unsplash.com/photo-1599044368810-238581bb322b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=757&q=80"
         }
+        width={"60%"}
       />
     </section>
   );

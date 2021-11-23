@@ -33,11 +33,13 @@ const Section3 = () => {
             </Link>
           </button>
         }
+        width={"40%"}
       />
       <ImageComponent
         img={
           "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
         }
+        width={"60%"}
       />
     </section>
   );
