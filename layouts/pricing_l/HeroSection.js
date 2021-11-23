@@ -18,13 +18,11 @@ const HeroSection = () => {
           </p>
         }
         componentBg={"black"}
-        width={"60%"}
       />
       <ImageComponent
         img={
           "https://images.pexels.com/photos/2873486/pexels-photo-2873486.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
         }
-        width={"40%"}
       />
     </section>
   );

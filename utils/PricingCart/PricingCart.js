@@ -1,8 +1,6 @@
 const PricingCart = ({ title, paragraph, time, price, btn }) => {
   return (
-    <div
-      className={`w-full h-full flex flex-col items-center justify-center px-10`}
-    >
+    <div className="w-full h-full flex flex-col items-center justify-center px-10">
       <div
         className="w-full flex flex-col items-center justify-center
        sm:flex-row sm:items-start sm:justify-between

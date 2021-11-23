@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-const ImageComponent = ({ img, width }) => {
+const ImageComponent = ({ img }) => {
   return (
-    <div className={`w-full lg:w-[${width}] h-full relative`}>
+    <div className={`w-full lg:w-[60%] h-full relative`}>
       <div className="w-full h-[380px] md:h-screen relative">
         <Image
           src={img}

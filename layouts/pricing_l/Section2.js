@@ -11,7 +11,7 @@ const Section2 = () => {
         <button className="h-10 w-[100px] rounded-3xl bg-gray-200 px-2 cursor-default">
           <div
             className={`h-8 w-8 rounded-full bg-black overflow-hidden cursor-pointer duration-200 ease-out ${
-              btn === true ? "ml-[53px]" : "ml-0"
+              btn ? "ml-[53px]" : "ml-0"
             }`}
             onClick={() => setBtn((pervState) => !pervState)}
           />
