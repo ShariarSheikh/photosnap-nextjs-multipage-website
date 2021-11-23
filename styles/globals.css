@@ -18,3 +18,7 @@ a {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg_gradient {
+  background: linear-gradient(to bottom, transparent 0%, #000000a1 40%);
+}

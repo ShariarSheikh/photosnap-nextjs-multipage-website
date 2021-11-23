@@ -10,7 +10,7 @@ const PhotoCart = ({ img, headerText, title, actionBtn }) => {
         objectFit="cover"
         className="hover:scale-110 duration-200"
       />
-      <div className="absolute bottom-0 w-full h-[30%] bg-black bg-opacity-50 px-8 hover:scale-105 duration-200">
+      <div className="absolute bottom-0 w-full h-[30%]  bg_gradient px-8 hover:scale-105 duration-200">
         <div>
           {headerText}
           {title}
