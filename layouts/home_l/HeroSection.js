@@ -11,7 +11,7 @@ const HeroSection = () => {
         headerText={
           <h1 className="md:text-6xl text-4xl text-gray-300 tracking-wider uppercase font-medium">
             Create and <br className="hidden md:block" />
-            share your <br /> phots stories
+            share your <br /> photos stories
           </h1>
         }
         paragraph={
